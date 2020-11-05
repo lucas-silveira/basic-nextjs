@@ -8,7 +8,7 @@ interface IProduct {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await fetch('http://localhost:3333/recommended/')
+  const response = await fetch(`${process.env.API_URL}/recommended`)
   const data: IProduct[] = await response.json()
   const paths = data.map(product => ({
     params: { id: product.id.toString() }
@@ -21,7 +21,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const response = await fetch(`http://localhost:3333/recommended/${params.id}`)
+  const response = await fetch(`${process.env.API_URL}/recommended/${params.id}`)
   const product: IProduct = await response.json()
   
   return {

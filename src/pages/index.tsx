@@ -10,7 +10,7 @@ export default function Home() {
   const [recommendedProducts, setRecommendedProducts] = useState<IProduct[]>([])
 
   useEffect(() => {
-    fetch('http://localhost:3333/recommended')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/recommended`)
       .then(response => response.json())
       .then(data => setRecommendedProducts(data))
   },[])

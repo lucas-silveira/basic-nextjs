@@ -7,7 +7,7 @@ interface IProduct {
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch('http://localhost:3333/recommended')
+  const response = await fetch(`${process.env.API_URL}/recommended`)
   const data: IProduct[] = await response.json()
   
   return {
