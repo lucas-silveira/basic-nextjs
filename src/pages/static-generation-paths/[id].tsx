@@ -1,6 +1,6 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next'
 import { useRouter } from 'next/router'
-import { Title } from '../../styles/pages/Home'
+import { Title } from '@/styles/pages/Home'
 
 interface IProduct {
   id: string;
