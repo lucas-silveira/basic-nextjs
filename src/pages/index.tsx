@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Title } from '@/styles/pages/Home'
+import SEO from '@/components/SEO'
 
 interface IProduct {
   id: string;
@@ -17,6 +18,11 @@ export default function Home() {
 
   return (
     <div>
+      <SEO
+        title="DevCommerce, your top ecommerce"
+        image="boost.png"
+        shouldExcludeTitleSuffix
+      />
       <section>
         <Title>Products</Title>
 
